@@ -1,0 +1,58 @@
+.iconIndex{
+  /*padding-top:25px !important;*/
+}
+.icon-index-on{
+  background-image: url('../../img/icon-index-on.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-index-off{
+  background-image: url('../../img/icon-index-off.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-black-on{
+  background-image: url('../../img/icon-black-on.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-black-off{
+  background-image: url('../../img/icon-black-off.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-credit-on{
+  background-image: url('../../img/icon-credit-on.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-credit-off{
+  background-image: url('../../img/icon-credit-off.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-my-on{
+  background-image: url('../../img/icon-my-on.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-my-off{
+  background-image: url('../../img/icon-my-off.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 31px !important;
+}
+.icon-add-on{
+  background-image: url('../../img/icon-add-on.png');
+  background-position-x:center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  height: 56px !important;
+}

@@ -1,0 +1,64 @@
+body{
+  font-family: "微软雅黑";
+}
+
+.bar.bar-assertive{
+  border-color:white;
+  background-color:white;
+  background-image:linear-gradient(0deg, white, white 50%, transparent 50%);
+  color:black;
+}
+.bar.bar-assertive .title{
+  color: black;
+}
+.list{
+  margin-bottom:10px;
+}
+.ion-ios-arrow-right{
+  color: #DDDDDD;
+}
+.item-stacked-label{
+  text-align: right;
+  color: #a8a7a7;
+  font-size: 13px;
+  font-weight:normal !important;font-family: '宋体';
+}
+input[type="text"]{
+  font-size: 13px;
+}
+.info{
+  padding:15px;
+  background-color: #F7F7F7;
+}
+.infoTitle{
+  padding-bottom:5px;
+}
+.infoContent{
+  font-size: 13px;
+}
+.button.button-positive{
+  background-color:#42bd55;
+}
+.lableselected:focus{
+  border-bottom: 1px solid #42bd55 !important;
+}
+.lableunselected{
+  border-bottom: 1px solid #ddd !important;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active,
+ion-tabs.tabs-color-active-positive .tab-item.active{
+  color:#42bd55;
+}
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item,
+.tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item{
+  line-height: 20px;
+}
+.tabs{
+  height: 80px;
+  background-color: white;
+  border-color: white;
+}
+.tab-item icon{
+  height: 65px;
+}
+
