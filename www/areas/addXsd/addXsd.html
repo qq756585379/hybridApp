@@ -1,0 +1,93 @@
+<ion-view hide-nav-bar="true" cache-view="false">
+  <div class="nav-bar-block" nav-bar="active">
+    <ion-header-bar class="bar-assertive bar bar-header" align-title="center">
+      <div class="title title-center header-item">新人贷</div>
+      <div class="buttons">
+        <button class="button" ng-click="showRule()">规则</button>
+      </div>
+    </ion-header-bar>
+  </div>
+  <ion-content>
+    <!--新手标 -->
+    <div class="row">
+      <div class="col col-50" style="border-right: 1px solid #f8f8f8;">
+        <div class="headFont">{{cv}}</div>
+        <div class="headFont">当前信用身价</div>
+
+      </div>
+      <div class="col col-50">
+        <div class="headFont">{{15-countXsb}}</div>
+        <div class="headFont">新手贷剩余次数</div>
+
+      </div>
+    </div>
+    <div class="list" style="margin-bottom: 0px;">
+      <label class="item item-input">
+        <span class="input-label">借款金额</span>
+        <input type="text"  ng-model="produce.totalPrice" readonly="true" style="background:white;color:#aaaaaa;"/>
+        <span style="padding-right: 20px;font-size: 13px;"><strong>元</strong></span>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">年利率</span>
+        <input type="text"  ng-model="produce.interestRates"  readonly="true"  style="background:white;color:#aaaaaa;">
+        <span style="padding-right: 20px;font-size: 13px;"><strong>%</strong></span>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">还款日期</span>
+        <input type="text" placeholder="期限不少于3天且不超过25天" ng-model="produce.deadTime" ng-click="openDatePicker()">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">借款用途</span>
+        <input type="text" maxlength="10" placeholder="请简单描述借款用途" ng-model="produce.memo">
+      </label>
+
+
+      <label class="item item-input">
+        <div style="font-size:13px;text-align: left;color:#999999;width: 100%;margin-right:20px;">到期后利息约为：{{appointment | number:2}}</div>
+      </label>
+    </div>
+
+    <div style="height: 10px;background-color: #F8F8F8;"></div>
+
+
+    <div style="font-size: 12px;margin-left: 18px;margin-top: 10px;letter-spacing: 1px;margin-right: 10px;">
+      <span style="color: #387ef5;">温馨提示：</span>
+      <span style="color: #808080;">该笔贷款如有违约,个人信息将被公示至中国最大的黑名单平台-中国诚信联盟 www.credit-manage.com 及提交各大搜索引擎</span></div>
+    <div style="font-size: 12px;margin-left: 18px;letter-spacing: 1px;margin-top: 10px;color: #808080;">还款日23:20自动扣款，请确保自金融帐户余额充足</div>
+
+
+    <div style="margin-top: 10px;padding-left:18px;font-size:12px;">
+      我已同意《<a href="#/tab/produces/jkrxy">借款人协议</a>》《<a href="#/tab/produces/jdxy">借贷协议</a>》《<a href="#/tab/produces/sqs">授权书</a>》
+    </div>
+
+    <div style="margin-right: 17px;margin-left: 17px;clear: left;">
+      <button class="button button-full button-positive" ng-click="addXsb()" style="border-radius: 3px;">保存</button>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+
+<script id="modal.html" type="text/ng-template">
+  <div class="modal">
+    <ion-header-bar style="background:#0c60ee;" >
+      <h1 class="title" style="color: white;"><i class="icon-chevro-left"></i>规则</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div style="padding: 15px;">1.新人贷专为信用身价<800元的用户设计，以便新用户提高身价，累积信用。</div>
+      <div style="padding: 15px;">2.新人贷单次借款金额以50元为倍数递增（上限300元），即第一次可借50，第二次100以此类推。</div>
+      <div style="padding: 15px;">3.新人贷借款成功后资金将实时到账自金融账户</div>
+      <div style="padding: 15px;">4.新人贷模式下，每次还款可增加的信用身价为借款金额的10% </div>
+      <div style="padding: 15px;">5.新人贷最短借款时间为3天，最长25天，借款利率=平台平均借款利率 X 50%，由系统自动计算。</div>
+      <div style="padding: 15px;" >6.每个用户最多可参与15次新人贷，信用身价大于800元后，新人贷自动取消，进入自由借款模式。</div>
+      <div style="margin-top: 15px;">
+        <button class="button button-full button-stable" ng-click="closeModal()" style="width:95%;background: #dddddd;color: #959595;margin: 0 auto;">关闭</button>
+      </div>
+  </div>
+  </ion-content>
+  </div>
+</script>

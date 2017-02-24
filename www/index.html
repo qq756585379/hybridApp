@@ -11,6 +11,12 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="areas/tab/tab.css" rel="stylesheet">
     <link href="areas/login/login.css" rel="stylesheet">
+    <link href="areas/home/home.css" rel="stylesheet">
+    <link href="areas/black/black.css" rel="stylesheet">
+    <link href="areas/addXsd/addXsd.css" rel="stylesheet">
+    <link href="areas/addProduce/addProduce.css" rel="stylesheet">
+    <link href="areas/credit/credit.css" rel="stylesheet">
+    <link href="areas/my/my.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -28,22 +34,39 @@
     <script src="areas/login/login_route.js"></script>
     <script src="areas/login/login_controller.js"></script>
     <script src="areas/login/login_service.js"></script>
-
+    <!--home-->
+    <script src="areas/home/home_route.js"></script>
+    <script src="areas/home/home_controller.js"></script>
+    <script src="areas/home/home_service.js"></script>
+    <!--black-->
+    <script src="areas/black/black_route.js"></script>
+    <script src="areas/black/black_controller.js"></script>
+    <script src="areas/black/black_service.js"></script>
+    <!--addXsd-->
+    <script src="areas/addXsd/addXsd_route.js"></script>
+    <script src="areas/addXsd/addXsd_controller.js"></script>
+    <script src="areas/addXsd/addXsd_service.js"></script>
+    <!--addProduce-->
+    <script src="areas/addProduce/addProduce_route.js"></script>
+    <script src="areas/addProduce/addProduce_controller.js"></script>
+    <script src="areas/addProduce/addProduce_service.js"></script>
+    <!--credit-->
+    <script src="areas/credit/credit_route.js"></script>
+    <script src="areas/credit/credit_controller.js"></script>
+    <script src="areas/credit/credit_service.js"></script>
+    <!--my-->
+    <script src="areas/my/my_route.js"></script>
+    <script src="areas/my/my_controller.js"></script>
+    <script src="areas/my/my_service.js"></script>
 
   </head>
   <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
+
     <ion-nav-bar class="bar-assertive">
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
+
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

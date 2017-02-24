@@ -1,0 +1,110 @@
+<ion-view hide-nav-bar="true">
+  <div class="nav-bar-block" nav-bar="active">
+    <ion-header-bar class="bar-assertive bar bar-header" align-title="center">
+      <div class="title title-center header-item">我的</div>
+      <div class="buttons">
+        <button class="button">退出</button>
+      </div>
+    </ion-header-bar>
+  </div>
+  <ion-content style="background-color:#DDDDDD;">
+    <div style="height: 80px;" ng-click="accreditation()">
+      <ion-list>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" style="min-height:80px;height: 83px;font-size: 13px;padding:0px;">
+          <div style="float: left;width: 33%;padding-top: -60px !important;text-align: center;">
+            <img src="{{company.companyPic}}" width="60" height="60" style="border-radius:100px;margin-top: 10px;">
+          </div>
+          <div style="float: left;width: 67%;padding-top: 20px;">
+            <h2>{{company.companyName}}</h2>
+            <p style="font-size: 13px;">{{company.phone}}</p>
+          </div>
+          <i class="icon ion-ios-unlocked-outline" style="color: mediumvioletred;"></i>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="list" style="height: 50px;background-color: white;line-height: 50px;;">
+      <div style="float: left;width: 50%;">
+        <div style="font-size: 13px;text-align: center;color:#b1b1b1;">关注 0</div>
+      </div>
+      <div style="float: left;width: 50%;border-left: 1px solid #f8f8f8;border-left:1px solid #DDDDDD;">
+        <div style="font-size: 13px;text-align: center;color:#b1b1b1;">粉丝 0</div>
+      </div>
+    </div>
+
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/my/capitalDetail">
+        <i class="icon ion-email" style="color:blue;font-size:30px;"></i>
+        <div style="float: left;width: 50%;">余额</div>
+        <div style="float: left;width: 50%;text-align: right;">200</div>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+      <a class="item item-icon-left" ng-click="recharge()">
+        <i class="icon ion-chatbubble-working" style="color:orangered;font-size:30px;"></i> 充值
+      </a>
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/my/withDraw">
+        <i class="icon ion-mic-a" style="color:blueviolet;font-size:30px;"></i> 提现
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/bandCard">
+        <i class="icon ion-email" style="color:blue;font-size:30px;"></i>
+        <div style="float: left;width: 50%;">借入</div>
+        <div style="float: left;width: 50%;text-align: right;">300</div>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/updatePassword">
+        <i class="icon ion-chatbubble-working" style="color:orangered;font-size:30px;"></i>
+        <div style="float: left;width: 50%;">借出</div>
+        <div style="float: left;width: 50%;text-align: right;">300</div>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/bandCard">
+        <i class="icon ion-email" style="color:blue;font-size:30px;"></i> 投资卷
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/updatePassword">
+        <i class="icon ion-chatbubble-working" style="color:orangered;font-size:30px;"></i> 邀请码
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/bandCard">
+        <i class="icon ion-email" style="color:blue;font-size:30px;"></i> 消息中心
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/updatePassword">
+        <i class="icon ion-chatbubble-working" style="color:orangered;font-size:30px;"></i> 帮助与反馈
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right" href="#/tab/account/bandCard">
+        <i class="icon ion-email" style="color:blue;font-size:30px;"></i> 分享
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>

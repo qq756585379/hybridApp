@@ -1,0 +1,75 @@
+
+#tab_home button{
+  color: #8b8c8e;
+  background-color:#e3e4e6;
+  border-color:#e3e4e6;
+  width: 60px;
+  height: 28px;
+  font-size:14px;
+}
+#tab_home .list a{
+  background-color: white;
+}
+#tab_home .list div{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+#tab_home .list img{
+  width: 50px;
+}
+
+#tab_home .daikuan{
+  height: 51px;
+  clear: left;
+  line-height: 50px;
+  text-align: center;
+  color:#4D4D4D;
+}
+.duandai_select{
+   width: 50%;float: left;font-size:20px;border-bottom:2px solid #42bd55;
+}
+.duandai_nonselect{
+  width: 50%;float: left;font-size:20px;
+}
+.changdai_nonselect{
+  width: 50%;float: left;font-size:20px;border-left:1px solid #eaeaea;
+}
+.changdai_select{
+  width: 50%;float: left;font-size:20px;border-left:1px solid #eaeaea;border-bottom:2px solid #42bd55;
+}
+#tab_home .item-remove-animate{border:0;padding:0;margin:0;}
+#tab_home .div11{border-bottom:1px solid red;background-color: white;width:100%;}
+#tab_home .div12{width: 100%;margin-top: 5px;height:52px;}
+#tab_home .a11{
+  text-decoration: none;color: black; display: block;float: left;width: 78%;
+}
+#tab_home .img11{border-radius: 100%;border:1px solid #d7d6d6;width: 50px;}
+#tab_home .img12{position: absolute; left: -9px;top:-9px;}
+#tab_home .em11{
+  float: left; font-style: normal; display: block;background: #f6a91d; color: #fff;
+  font-size: 11px; width: 28px;
+  height: 16px; line-height: 16px;
+  text-align: center; border-radius: 4px;
+  margin-top: 9px; margin-left: 5px;
+}
+#tab_home .span11{
+  background: url(../../img/tqwc.jpg) no-repeat left center;
+  background-size:cover; width: 71px; height: 23px;
+  display: block; float: left; text-align: left;  color: #fff;
+  line-height: 23px; margin-top: 6px; margin-left: 10px;
+}
+#tab_home .span11 i{
+  font-style: normal; color: #fff;font-size: .6em; display: block;
+  width: 23px; text-align: center;line-height: 23px;
+}
+#tab_home .span12{
+  background: url(../../img/sswc.jpg) no-repeat left center;
+  background-size:cover; width: 71px; height: 23px;
+  display: block; float: left; text-align: left;
+  color: #fff;  line-height: 23px; margin-top: 6px; margin-left: 10px;
+}
+#tab_home .span12 i{
+  font-style: normal; color: #fff;font-size: .6em; display: block;
+  width: 23px; text-align: center;line-height: 23px;
+}

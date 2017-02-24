@@ -1,0 +1,174 @@
+
+<ion-view hide-nav-bar="true" cache-view="true" id="tab_home">
+
+  <div class="nav-bar-block" nav-bar="active">
+    <ion-header-bar class="bar-assertive bar bar-header item-input-inset" align-title="center">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="请输入您要找的人的名字">
+      </label>
+      <button class="button">搜&nbsp;索</button>
+    </ion-header-bar>
+  </div>
+
+  <ion-content>
+
+    <!--banner-->
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000
+                   show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex" delegate-handle="delegateHandler">
+      <ion-slide>
+        <div class="box blue">
+          <img src="http://image.credit-manage.com/upload/2017/02/08/1d669e3e-1fe2-4e73-8954-bb99935cc18d.jpg" height="100">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow">
+          <img src="http://image.credit-manage.com/upload/2017/01/23/e39a924f-16dc-4246-923a-12685074fb46.jpg" height="100">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box pink">
+          <img src="http://image.credit-manage.com/upload/2017/01/06/d9de8f95-3e49-489a-8ec7-7d1e9fc18e7e.jpg" height="100">
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+    <!--借投学院，帮助-->
+    <div class="list">
+      <a href="#/tab/jrfb"><div><img src="../../img/icon-jtxy.png"></div></a>
+      <a href="#/tab/jrjs"><div><img src="../../img/icon-bz.png"></div></a>
+    </div>
+
+    <!--10px间隔-->
+    <div style="clear:left;background-color:#F8F8F8;height: 10px;"></div>
+
+    <!--长贷短贷分类-->
+    <div class="daikuan">
+      <div ng-class="isDuan==0?'duandai_select':'duandai_nonselect'">短贷</div>
+      <div ng-class="isDuan==1?'changdai_select':'changdai_nonselect'">长贷</div>
+    </div>
+
+    <!--短贷-->
+    <ion-list ng-if="isDuan==0">
+      <div style="border-top: 1px solid #eaeaea;"></div>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="produce in produces" type="item-text-wrap">
+        <div class="div11">
+          <div class="div12">
+            <a class="a11" ng-click="showMe()">
+              <div style="height: 47px;">
+                <div style="float:left;width: 50px;margin-left: 15px;position:relative;">
+                  <img class="img11" ng-src="http://image.credit-manage.com/{{produce.headPic}}" ng-if="produce.headPic!=null&&produce.headPic!=''">
+                  <img class="img11" ng-src="../img/head.png" width="50px" ng-if="produce.headPic==null||produce.headPic==''">
+                  <img class="img12" ng-if="produce.payBackTitle==2"  src="../../img/tq.png"/>
+                  <img class="img12" ng-if="produce.payBackTitle==1" src="../../img/ss.png"/>
+                </div>
+                <div style="float: left;margin-left: 10px;">
+                  <div style="height: 30px;">
+                    <p style="float: left; font-size: 15px; margin: 5px 0 0 0 ; height:25px; line-height: 25px;">{{produce.name}}</p>
+                    <em class="em11">LV{{produce.tlevel}}</em>
+                    <span class="span11" ng-if="produce.payBackTitle==2"><i>{{produce.payBackTitleCount}}</i></span>
+                    <span class="span12" ng-if="produce.payBackTitle==1"><i>{{produce.payBackTitleCount}}</i></span>
+                  </div>
+                  <span style="display: block;margin-top:2px;font-size: 13px; color: #AAAAAA">粉丝：{{produce.fs}}</span>
+                </div>
+              </div>
+            </a>
+            <a href="#/tab/zjrCreditCheck/{{produce.userId}}" style="text-decoration: none;color: black; display: block;width: 22%;float:right;margin-top:20px;">
+              <div style="line-height: 25px;font-size:13px;color:#A2A2A2;text-align: right;padding-right:5px;">
+                <img src="img/zclzx1.png" style=" width:100%"/>
+              </div>
+            </a>
+          </div>
+
+          <div style="border-bottom: 1px solid #eaeaea;height: 5px;clear: left;"></div>
+          <a href="#/tab/zjr/produces/{{produce.produceId}}" 	style="text-decoration: none;color: black;">
+            <div style="margin-top: 10px;height: 50px;border-bottom: 1px solid #eaeaea;">
+              <div style="float: left;width: 28%;text-align: center;border-right: 1px solid #eaeaea;">
+                <span style="color:blue;font-size: 14px;">{{produce.totalPrice-produce.investAccount | number:0}}/{{produce.totalPrice}}</span><br/>
+                <span style="font-size: 13px;color: #A2A2A2;">尚需/借款</span>
+              </div>
+              <div style="float: left;width: 19%;text-align: center;border-right: 1px solid #eaeaea;">
+                <span style="color:blue;font-size: 14px;">{{produce.interestRates*100 | number:0}}%</span><br/>
+                <span style="font-size: 13px;color: #A2A2A2;">年利率</span>
+              </div>
+              <div style="float: left;width: 19%;text-align: center;border-right: 1px solid #eaeaea;">
+                <span style="color:blue;font-size: 14px;">{{produce.deadLine | number:0}}</span><br/>
+                <span style="font-size: 13px;color: #A2A2A2;">期限(天)</span>
+              </div>
+              <div style="font-size: 13px;float: left;width: 25%;text;text-align: center;height: 25px;padding-top:10px;line-height: 15px;padding:2 10 2 10; 	overflow:hidden;text-overflow:ellipsis;white-space:nowap;margin-left:3%;">
+                {{produce.memo}}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div style="height: 10px;background-color: #F8F8F8;"></div>
+      </ion-item>
+      <ion-infinite-scroll ng-if="noMore" on-infinite="loadProduces()" distance="10%"></ion-infinite-scroll>
+    </ion-list>
+
+    <!--长贷-->
+    <ion-list ng-if="isDuan==1">
+      <div style="border-top: 1px solid #eaeaea;"></div>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="produce in produces" type="item-text-wrap"  style="border:0px;padding:0;margin: 0;">
+        <div style="border-bottom:background-color: white;width:100%;">
+          <div style="width: 100%;margin-top: 5px;height:52px;">
+            <a ng-click="showMe()" style="text-decoration: none;color: black; display: block;float: left;width: 78%;">
+              <div style="height: 47px;">
+                <div style="float:left;width: 50px;margin-left: 15px;position:relative;">
+                  <img ng-src="http://image.credit-manage.com/{{produce.headPic}}" width="50px"  style="border-radius: 100%;border:1px solid #d7d6d6;"  ng-if="produce.headPic!=null&&produce.headPic!=''">
+                  <img ng-src="../img/head.png" width="50px" style="border-radius: 100%;border:1px solid #d7d6d6;" ng-if="produce.headPic==null||produce.headPic==''">
+                  <img ng-if="produce.payBackTitle==2"  src="../img/tq.png" style="position: absolute; left: -9px;top:-9px;" />
+                  <img ng-if="produce.payBackTitle==1" src="../img/ss.png" style=" position: absolute; left: -9px;top:-9px;"/>
+                </div>
+                <div style="float: left;margin-left: 10px;">
+                  <div style="height: 30px;">
+                    <p style="float: left; font-size: 15px; margin: 5px 0 0 0 ; height:25px; line-height: 25px;">{{produce.name}}</p>
+                    <em style="float: left; font-style: normal; display: block;background: #f6a91d; color: #fff; font-size: 11px; width: 28px; height: 16px; line-height: 16px; text-align: center; border-radius: 4px; margin-top: 9px; margin-left: 5px;">LV{{produce.tlevel}}</em>
+                    <span ng-if="produce.payBackTitle==2" style="background: url(img/tqwc.jpg) no-repeat left center; background-size:cover; width: 71px; height: 23px; display: block; float: left; text-align: left;  color: #fff;  line-height: 23px; margin-top: 6px; margin-left: 10px;"><i style="font-style: normal; color: #fff;font-size: .6em; display: block; width: 23px; text-align: center;line-height: 23px;">{{produce.payBackTitleCount}}</i></span>
+                    <span ng-if="produce.payBackTitle==1" style="background: url(img/sswc.jpg) no-repeat left center; background-size:cover; width: 71px; height: 23px; display: block; float: left; text-align: left;  color: #fff;  line-height: 23px; margin-top: 6px; margin-left: 10px;"><i style="font-style: normal; color: #fff;font-size: .6em; display: block; width: 23px; text-align: center;line-height: 23px;">{{produce.payBackTitleCount}}</i></span>
+                  </div>
+                  <span style="display: block;margin-top:2px;font-size: 13px; color: #AAAAAA">粉丝：{{produce.fs}}</span>
+                </div>
+              </div>
+            </a>
+            <a href="#/tab/zjrCreditCheck/{{produce.userId}}" style="text-decoration: none;color: black; display: block;width: 22%;float:right;margin-top:20px;">
+              <div style="line-height: 25px;font-size:13px;color:#A2A2A2;text-align: right;padding-right:5px;">
+                <img src="img/zclzx1.png" style=" width:100%"/>
+              </div>
+            </a>
+          </div>
+
+          <div style="border-bottom: 1px solid #eaeaea;height: 5px;clear: left;"></div>
+          <a href="#/tab/zjr/produces/{{produce.produceId}}" 	style="text-decoration: none;color: black;">
+            <div style="margin-top: 10px;height: 50px;border-bottom: 1px solid #eaeaea;">
+              <div style="float: left;width: 28%;text-align: center;border-right: 1px solid #eaeaea;">
+                <span style="color:blue;font-size: 14px;">{{produce.totalPrice-produce.investAccount | number:0}}/{{produce.totalPrice}}</span><br/>
+                <span style="font-size: 13px;color: #A2A2A2;">尚需/借款</span>
+              </div>
+              <div style="float: left;width: 19%;text-align: center;border-right: 1px solid #eaeaea;">
+                <span style="color:blue;font-size: 14px;">{{produce.interestRates*100 | number:0}}%</span><br/>
+                <span style="font-size: 13px;color: #A2A2A2;">年利率</span>
+              </div>
+              <div style="float: left;width: 19%;text-align: center;border-right: 1px solid #eaeaea;">
+                <span style="color:blue;font-size: 14px;">{{produce.deadLine | number:0}}</span><br/>
+                <span style="font-size: 13px;color: #A2A2A2;">期限(天)</span>
+              </div>
+              <div style="font-size: 13px;float: left;width: 25%;text;text-align: center;height: 25px;padding-top:10px;line-height: 15px;padding:2 10 2 10; 	overflow:hidden;text-overflow:ellipsis;white-space:nowap;margin-left:3%;">
+                {{produce.memo}}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div style="height: 10px;background-color: #F8F8F8;"></div>
+      </ion-item>
+      <ion-infinite-scroll ng-if="noMore" on-infinite="loadProduces()" distance="10%"></ion-infinite-scroll>
+    </ion-list>
+
+    <div style="width:100%;">
+      <div ng-if="noData" style="background-image: url(../../img/zw.png);background-repeat: no-repeat;width: 150px;height: 181px;background-position: center;margin: 0 auto;margin-top:50px ;">
+        &nbsp;
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view hide-nav-bar="true" cache-view="false">
+  <div class="nav-bar-block" nav-bar="active">
+    <ion-header-bar class="bar-assertive bar bar-header" align-title="center">
+      <div class="title title-center header-item">借钱</div>
+      <div class="buttons">
+        <button class="button" ng-click="toTip()">借不到钱?</button>
+      </div>
+    </ion-header-bar>
+  </div>
+  <ion-content>
+
+    <div style="font-size: 13px;height: 40px;line-height: 50px;padding-left: 15px;color:#AAAAAA;background-color: white;">当前可借额度{{creditValue}}元</div>
+
+    <div class="list" style="margin-bottom: 0px;">
+      <label class="item item-input">
+        <span class="input-label">借款金额</span>
+        <input type="text" placeholder="请输入100的整数倍" ng-model="produce.totalPrice" ng-change="appointmentChange(produce)">
+        <span style="padding-right: 20px;font-size: 13px;"><strong>元</strong></span>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">还款日期</span>
+        <input type="text" placeholder="期限不超过25天" ng-model="produce.deadTime" ng-click="openDatePicker()">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">年利率</span>
+        <input type="text" placeholder="您能承受的最高年利率" ng-model="produce.interestRates"  ng-change="appointmentChange(produce)">
+        <span style="padding-right: 20px;font-size: 13px;"><strong>%</strong></span>
+      </label>
+
+      <label class="item item-input">
+        <div style="font-size:13px;text-align: left;color:#999999;width: 100%;margin-right:20px;">到期后利息约为：{{appointment | number:2}}</div>
+      </label>
+    </div>
+
+    <div style="height: 10px;background-color: #F8F8F8;"></div>
+
+    <div class="list" style="margin-bottom: 0px;">
+      <!--			<label class="item item-input">
+                        <span class="input-label">借款用途</span>
+                        <textarea style="width: 50%;padding: 5px;" rows="2" cols="4" maxlength="20" placeholder="请简单描述借款用途" ng-model="produce.memo"></textarea>
+                        <input type="text" maxlength="20" placeholder="请简单描述借款用途" ng-model="produce.memo" style="height: 40px;line-height: 20px;">
+                    </label>
+       -->
+      <label class="item item-input" style="border: none;">
+        <span class="input-label">借款用途</span>
+      </label>
+      <div>
+        <label class="item item-input" style="border: none;">
+	 	<textarea style="resize:none;padding-left: 2px;" maxlength="20" placeholder="请简单描述借款用途，不文明用语将被扣除信用身价。" ng-model="produce.memo">
+	 	</textarea>
+        </label>
+      </div>
+      <label class="item item-input">
+        <span class="input-label">发布有效期至</span>
+        <input type="text" placeholder="发布期限不超过3天" ng-model="produce.limitTime" ng-click="openDatePicker2()">
+      </label>
+    </div>
+
+
+    <div style="font-size: 12px;margin-left: 18px;margin-top: 10px;letter-spacing: 1px;margin-right: 10px;">
+      <span style="color: #387ef5;">温馨提示：</span>
+      <span style="color: #808080;">该笔贷款如有违约,个人信息将被公示至中国最大的黑名单平台-中国诚信联盟 www.credit-manage.com 及提交各大搜索引擎</span></div>
+    <div style="font-size: 12px;margin-left: 18px;letter-spacing: 1px;margin-top: 10px;color: #808080;">还款日23:20自动扣款，请确保自金融帐户余额充足</div>
+
+
+    <div style="margin-top: 10px;padding-left:18px;font-size:12px;">
+      我已同意《<a href="#/tab/jkrxy">借款人协议</a>》《<a href="#/tab/jdxy">借贷协议</a>》《<a href="#/tab/sqs">授权书</a>》
+    </div>
+
+    <div style="margin-right: 17px;margin-left: 17px;clear: left;">
+      <button class="button button-full button-positive" ng-click="addProduce()" style="border-radius: 3px;">保存</button>
+    </div>
+
+  </ion-content>
+</ion-view>
